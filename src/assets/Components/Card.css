@@ -1,0 +1,56 @@
+.card {
+    
+  width: 220px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: hsl(235, 46%, 20%); 
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.card-header {
+  height: 50px;
+  position: relative;
+}
+
+.card-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.card-body {
+  background-color: hsl(235, 46%, 20%);
+  padding: 20px;
+  margin-top: -10px; /* overlap effect */
+  border-radius: 15px 15px 0 0;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-title-row h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.menu {
+  color: hsl(236, 100%, 87%);
+  cursor: pointer;
+}
+
+.card-body h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.card-body p {
+  font-size: 0.85rem;
+  color: hsl(236, 100%, 87%);
+}
