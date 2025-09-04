@@ -1,42 +1,105 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  background: hsl(226, 43%, 10%);
+  color: white;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-card {
+  background: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.profile-top {
+  background: hsl(246, 80%, 60%);
+  padding: 30px 20px;
+  border-radius: 15px 15px 0 0;
+}
+
+.profile-top .profile-img {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.profile-top p {
+  opacity: 0.7;
+  margin: 0;
+}
+
+.profile-top h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.profile-bottom {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0.7;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card-wrapper {
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-icon {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+  opacity: 0.5;
 }
 
 .card {
-  padding: 2em;
+  background: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  background: hsl(235, 45%, 30%);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body h2 {
+  font-size: 2rem;
+  margin: 10px 0 5px;
+}
+
+.card-body p {
+  opacity: 0.6;
+  font-size: 0.9rem;
 }
