@@ -64,24 +64,33 @@ body {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+  height: 200px; /* fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .card-icon {
   position: absolute;
-  right: 10px;
-  top: -10px;
-  opacity: 0.5;
+  right: 15px;
+  top: 10px;
+  opacity: 0.3;
+  width: 60px;
+  height: auto;
 }
 
 .card {
   background: hsl(235, 46%, 20%);
   border-radius: 15px;
   padding: 20px;
-  margin-top: 40px;
   position: relative;
   z-index: 1;
   cursor: pointer;
   transition: background 0.3s ease;
+  height: 65%; /* shows more top background so icons appear */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
