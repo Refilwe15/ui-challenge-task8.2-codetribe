@@ -94,6 +94,7 @@ body {
   justify-content: space-between;
   height: 20vh;
   width : 150px;
+  border : 7px hsl(235, 45%, 30%);
 }
 
 .card:hover {
