@@ -65,7 +65,7 @@ body {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
-  height: 200px; /* fixed height for consistency */
+  height: 200px; 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
