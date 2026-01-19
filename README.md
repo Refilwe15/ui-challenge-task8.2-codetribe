@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+## Project Overview 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React Native UI challenge inspired by a modern time-tracking dashboard design. The goal was to accurately recreate the layout, spacing, colors, and card-based interface using React Native while keeping the code clean and reusable.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Mobile-first dashboard layout
 
-## Expanding the ESLint configuration
+- Reusable card components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Custom color themes per category
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React Native
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Expo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+TypeScript
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React Icons / Vector Icons
+
+Flexbox Layout
+
+Custom Stylesheets
+
+## How to run the website
+
+
+ - Clone the repository
+
+ - cd UI-CHALLENGE-TASK8.2-CODETRIBE
+
+## Install dependencies
+ - npm install
+
+## Start the project
+
+- npx expo start
+
+## Purpose of the Challenge
+
+Practice React Native layout and styling
+
+Improve component reusability
+
+Translate UI designs into functional mobile screens
+
+Strengthen TypeScript usage in React Native projects
+
+## Screenshot
+
+![picture](assets/uichallenge.png)
