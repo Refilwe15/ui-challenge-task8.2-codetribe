@@ -1,16 +1,15 @@
-import React from "react";
-import "./Card.css"; 
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import "./Card.css";
 
-// Define the props the Card component expects
 interface CardProps {
-  title: string;          // Card title (e.g. Work, Play)
-  hours: number;          // Current hours value
-  lastWeekHours: number;  // Hours from last week
-  color: string;          // Background color for the top strip
-  icon?: string;          // Optional icon image URL
+  title: string;
+  hours: number;
+  lastWeekHours: number;
+  color: string;
+  icon?: string;
 }
 
-// Functional card component using TypeScript and React.FC
 const Card: React.FC<CardProps> = ({
   title,
   hours,
@@ -18,43 +17,86 @@ const Card: React.FC<CardProps> = ({
   color,
   icon,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <div className="card">
-      {/* 
-        Top colored strip of the card
-        The background color is dynamic based on the `color` prop
-      */}
-      <div className="card-header" style={{ backgroundColor: color }}>
-        {/* 
-          Render icon only if it exists
-          This prevents errors when no icon is passed
-        */}
-        {icon && (
-          <img
-            src={icon}
-            alt={`${title} icon`}
-            className="card-icon"
-          />
-        )}
-      </div>
-
-      {/* Main content area of the card */}
-      <div className="card-body">
-        {/* Title row with menu icon */}
-        <div className="card-title-row">
-          <h3>{title}</h3>
-
-         
-          <span className="menu">•••</span>
+    <>
+      <div className="card">
+        {/* Top colored strip */}
+        <div className="card-header" style={{ backgroundColor: color }}>
+          {icon && (
+            <img src={icon} alt={`${title} icon`} className="card-icon" />
+          )}
         </div>
 
-        {/* Current hours */}
-        <h2>{hours}hrs</h2>
+        {/* Card body */}
+        <div className="card-body">
+          <div className="card-title-row">
+            <h3>{title}</h3>
 
-        {/* Last week comparison */}
-        <p>Last Week - {lastWeekHours}hrs</p>
+            {/* CLICKABLE DOTS */}
+            <span
+              className="menu"
+              onClick={() => setShowModal(true)}
+              style={{ cursor: "pointer" }}
+            >
+              •••
+            </span>
+          </div>
+
+          <h2>{hours}hrs</h2>
+          <p>Last Week - {lastWeekHours}hrs</p>
+        </div>
       </div>
-    </div>
+
+      {/* MODAL USING PORTAL */}
+      {showModal &&
+        ReactDOM.createPortal(
+          <div
+            onClick={() => setShowModal(false)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              backgroundColor: "rgba(0,0,0,0.7)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 999999,
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                backgroundColor: "#1c1f4a",
+                padding: "40px",
+                borderRadius: "20px",
+                color: "white",
+                minWidth: "300px",
+                textAlign: "center",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.6)",
+              }}
+            >
+              <h2>Nothing here yet</h2>
+
+              <button
+                onClick={() => setShowModal(false)}
+                style={{
+                  marginTop: "20px",
+                  padding: "10px 20px",
+                  borderRadius: "10px",
+                  border: "none",
+                  backgroundColor: "#5746ea",
+                  color: "white",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>,
+          document.body,
+        )}
+    </>
   );
 };
 

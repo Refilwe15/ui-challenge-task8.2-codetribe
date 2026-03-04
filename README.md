@@ -13,9 +13,7 @@ This project is a React Native UI challenge inspired by a modern time-tracking d
 
 ## Tech Stack
 
-React Native
-
-Expo
+React 
 
 TypeScript
 
@@ -51,4 +49,7 @@ Strengthen TypeScript usage in React Native projects
 
 ## Screenshot
 
-![picture](assets/uichallenge.png)
+![picture](src/images/uichallege.jpg)
+
+
+
