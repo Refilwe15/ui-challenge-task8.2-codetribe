@@ -49,7 +49,5 @@ Strengthen TypeScript usage in React Native projects
 
 ## Screenshot
 
-![picture](src/images/uichallege.jpg)
 
-
-
+![alt text](uichallege.jpg)
